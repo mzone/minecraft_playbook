@@ -60,8 +60,9 @@ export default function IsometricBlock({
   const strokeColor = isNew ? "#FFD400" : "rgba(0,0,0,0.15)";
   const strokeWidth = isNew ? 2 : 0.5;
 
-  // Arrow anchor: top-center of the block
+  // Arrow anchor: top-center of the block (exported for group arrow use)
   const topCenter = proj(0.5, 0.5, 1);
+  void topCenter;
 
   return (
     <g>
@@ -70,24 +71,14 @@ export default function IsometricBlock({
       <polygon points={toPoints(right)} fill={rightColor} stroke={strokeColor} strokeWidth={strokeWidth} />
 
       {isNew && (
-        <>
-          {/* Dashed outline on top face */}
-          <polygon
-            points={toPoints(top)}
-            fill="none"
-            stroke="#FFD400"
-            strokeWidth={2}
-            strokeDasharray="4 3"
-          />
-          {/* Downward arrow above new block */}
-          <g transform={`translate(${topCenter.sx}, ${topCenter.sy - tileH * 1.5})`}>
-            <line x1="0" y1="0" x2="0" y2={tileH * 0.9} stroke="#FFD400" strokeWidth={3} strokeLinecap="round" />
-            <polygon
-              points={`0,${tileH * 0.9} ${-tileH * 0.35},${tileH * 0.45} ${tileH * 0.35},${tileH * 0.45}`}
-              fill="#FFD400"
-            />
-          </g>
-        </>
+        /* Dashed outline on top face only — arrow is rendered once per group in MainBuildingStage */
+        <polygon
+          points={toPoints(top)}
+          fill="none"
+          stroke="#FFD400"
+          strokeWidth={2.5}
+          strokeDasharray="5 3"
+        />
       )}
     </g>
   );

@@ -16,9 +16,10 @@ export type Part = {
 export type Step = {
   stepNumber: number;
   totalSteps: number;
+  label: string;       // short hiragana label shown on stage
   parts: Part[];
   blocks: Block[];
-  hint?: string; // optional text hint (kept minimal)
+  cameraOffset?: { x: number; y: number }; // optional camera shift
 };
 
 // Minecraft vol.01 "ひみつきち" - 3 steps demo
@@ -26,6 +27,7 @@ export const steps: Step[] = [
   {
     stepNumber: 1,
     totalSteps: 3,
+    label: "かべを 1だん おこう",
     parts: [{ color: "#C4A265", label: "いた", count: 4 }],
     blocks: [
       // 1段目 南の壁（手前）- 4ブロック横並び
@@ -38,6 +40,7 @@ export const steps: Step[] = [
   {
     stepNumber: 2,
     totalSteps: 3,
+    label: "2だんに しよう",
     parts: [{ color: "#C4A265", label: "いた", count: 4 }],
     blocks: [
       // 1段目（既存）
@@ -55,6 +58,8 @@ export const steps: Step[] = [
   {
     stepNumber: 3,
     totalSteps: 3,
+    label: "まわりと ドアを つけよう",
+    cameraOffset: { x: -60, y: 30 },
     parts: [
       { color: "#C4A265", label: "いた", count: 8 },
       { color: "#7B4F2E", label: "ドア", count: 1 },
