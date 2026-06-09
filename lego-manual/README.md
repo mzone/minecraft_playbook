@@ -56,29 +56,34 @@ http://localhost:3000?vol=vol05
 
 ## PDF生成
 
-### 前提条件
-
-- Chromium: `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
-- Python 3 + `reportlab` + `Pillow`
+### 初回セットアップ（1回だけ）
 
 ```bash
-pip install reportlab Pillow
+cd lego-manual
+npm run pdf:setup
 ```
+
+Chromium・Python venv（`reportlab` / `Pillow`）をまとめて入れます。
+
+Docker 環境では `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/opt/pw-browsers/chromium-1194/chrome-linux/chrome` を指定できます。
 
 ### 全20巻を一括生成
 
 ```bash
-# 本番ビルドを起動してから実行
-npm run build && npm run start &
-node scripts/generate-all-pdfs.mjs
+cd lego-manual
+npm run build
+npm run start &          # 3000番が空いているときだけ
+npm run pdf
 ```
+
+`localhost:3000` でサーバーがすでに動いている場合は `npm run pdf` だけで OK です。
 
 生成されたPDFは `output/` ディレクトリに保存されます。
 
 ### 特定の巻だけ生成
 
 ```bash
-node scripts/generate-all-pdfs.mjs --vol vol01 --vol vol05
+npm run pdf -- --vol vol01 --vol vol05
 ```
 
 ## ディレクトリ構成

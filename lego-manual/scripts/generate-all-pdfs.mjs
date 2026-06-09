@@ -14,10 +14,11 @@ import { execSync } from "child_process";
 import { mkdirSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { getChromiumLaunchOptions } from "./playwright-launch.mjs";
+import { getPythonBin } from "./python-bin.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const BROWSER_PATH = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
 const BASE_URL = "http://localhost:3000";
 const OUT_DIR = resolve(ROOT, "output");
 
@@ -61,10 +62,7 @@ const targets = requestedVols.length > 0
 console.log(`🚀 生成対象: ${targets.map(v => v.id).join(", ")}`);
 console.log("🖥  ブラウザを起動中…");
 
-const browser = await chromium.launch({
-  executablePath: BROWSER_PATH,
-  args: ["--no-sandbox"],
-});
+const browser = await chromium.launch(getChromiumLaunchOptions());
 const ctx = await browser.newContext({
   viewport: { width: 720, height: 1200 },
   deviceScaleFactor: 2,
@@ -132,7 +130,7 @@ print(f"  ✅ PDF → {out}")
 
   const pyFile = resolve(OUT_DIR, `_make_${vol.id}.py`);
   writeFileSync(pyFile, pyScript);
-  execSync(`python3 ${pyFile}`, { stdio: "inherit" });
+  execSync(`${getPythonBin()} ${pyFile}`, { stdio: "inherit" });
 }
 
 await browser.close();

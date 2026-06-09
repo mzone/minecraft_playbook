@@ -15,11 +15,11 @@ import { execSync } from "child_process";
 import { mkdirSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { getChromiumLaunchOptions } from "./playwright-launch.mjs";
+import { getPythonBin } from "./python-bin.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-
-const BROWSER_PATH = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
 const BASE_URL = "http://localhost:3000";
 const STEPS = 5; // total steps in the mock data
 const OUT_DIR = resolve(ROOT, "output");
@@ -30,10 +30,7 @@ const OUT_PDF = process.argv.includes("--out")
 mkdirSync(OUT_DIR, { recursive: true });
 
 console.log("🖥  Launching browser…");
-const browser = await chromium.launch({
-  executablePath: BROWSER_PATH,
-  args: ["--no-sandbox"],
-});
+const browser = await chromium.launch(getChromiumLaunchOptions());
 const ctx = await browser.newContext({
   viewport: { width: 700, height: 760 },
   deviceScaleFactor: 2, // retina quality
@@ -93,5 +90,5 @@ print(f"PDF saved: {out}")
 
 const pyFile = resolve(OUT_DIR, "_make_pdf.py");
 writeFileSync(pyFile, pyScript);
-execSync(`python3 ${pyFile}`, { stdio: "inherit" });
+execSync(`${getPythonBin()} ${pyFile}`, { stdio: "inherit" });
 console.log(`\n🎉 Done! → ${OUT_PDF}`);

@@ -4,8 +4,8 @@ from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.utils import ImageReader
 from PIL import Image as PILImage
 
-paths = ["/home/user/minecraft_playbook/lego-manual/output/vol17_step_01.png","/home/user/minecraft_playbook/lego-manual/output/vol17_step_02.png","/home/user/minecraft_playbook/lego-manual/output/vol17_step_03.png"]
-out   = "/home/user/minecraft_playbook/lego-manual/output/vol17_うみのたんけん.pdf"
+paths = ["/Users/imamuu/Documents/project/minecraft_playbook/data/lego-manual/output/vol17_step_01.png","/Users/imamuu/Documents/project/minecraft_playbook/data/lego-manual/output/vol17_step_02.png","/Users/imamuu/Documents/project/minecraft_playbook/data/lego-manual/output/vol17_step_03.png"]
+out   = "/Users/imamuu/Documents/project/minecraft_playbook/data/lego-manual/output/vol17_うみのたんけん.pdf"
 
 page_w, page_h = landscape(A4)
 margin = 12
