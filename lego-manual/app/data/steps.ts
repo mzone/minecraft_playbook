@@ -20,6 +20,9 @@ export type CraftingRecipe = {
   gridLabel: (string | null)[][];          // hiragana label per cell
   output: { color: string; label: string; count: number };
   tableRequired: boolean;                   // true = ものづくりだい が必要
+  // Step-by-step how-to instructions shown below the recipe grid.
+  // Each string is one numbered step (hiragana, short).
+  howTo: string[];
 };
 
 export type Step = {
@@ -40,16 +43,23 @@ const LOG_COLOR  = "#8B6914";
 const PLANK_COLOR = "#C4A265";
 const DOOR_TOP   = "#7B4F2E";
 
-/** まるた → いた×4  (2×2, no table needed) */
+/** まるた → いた×4  (2×2, インベントリクラフト) */
 export const RECIPE_PLANK: CraftingRecipe = {
   gridSize: 2,
   grid: [[LOG_COLOR, null], [null, null]],
   gridLabel: [["まるた", null], [null, null]],
   output: { color: PLANK_COLOR, label: "いた", count: 4 },
   tableRequired: false,
+  howTo: [
+    "「E」キー（Switchは「…」ボタン）を おして もちものを ひらこう",
+    "もちものの なかから「まるた」を みつけよう",
+    "「まるた」を 右上の 小さい 2×2の マスに 1こ いれよう",
+    "みぎに「いた ×4」が でてきたら クリック（タップ）して うけとろう",
+    "まるた 1こ → いた 4まい に なるよ！くりかえして 30まい あつめよう",
+  ],
 };
 
-/** いた×4 → ものづくりだい×1  (2×2, no table needed) */
+/** いた×4 → ものづくりだい×1  (2×2, インベントリクラフト) */
 export const RECIPE_TABLE: CraftingRecipe = {
   gridSize: 2,
   grid: [
@@ -62,9 +72,16 @@ export const RECIPE_TABLE: CraftingRecipe = {
   ],
   output: { color: "#A0522D", label: "ものづくりだい", count: 1 },
   tableRequired: false,
+  howTo: [
+    "「E」キー（Switchは「…」ボタン）を おして もちものを ひらこう",
+    "2×2の マス ぜんぶ（4マス）に「いた」を 1まいずつ いれよう",
+    "みぎに「ものづくりだい」が でてきたら クリック（タップ）して うけとろう",
+    "もちものに「ものづくりだい」が はいったら、ちめんを 右クリック（タップ）して おこう",
+    "おいた「ものづくりだい」に ちかづいて 右クリックすると 3×3の おおきい クラフト画面が ひらくよ",
+  ],
 };
 
-/** いた×6（左2列）→ ドア×3  (3×3, table required) */
+/** いた×6（左2列）→ ドア×3  (3×3, ものづくりだい必須) */
 export const RECIPE_DOOR: CraftingRecipe = {
   gridSize: 3,
   grid: [
@@ -79,6 +96,13 @@ export const RECIPE_DOOR: CraftingRecipe = {
   ],
   output: { color: DOOR_TOP, label: "ドア", count: 3 },
   tableRequired: true,
+  howTo: [
+    "おいた「ものづくりだい」に ちかづいて 右クリック（タップ）しよう",
+    "3×3の クラフト画面が ひらくよ",
+    "「いた」を ひだりの 2れつ に ぜんぶ（6まい）いれよう — みぎの 1れつは あけておいてね",
+    "みぎに「ドア ×3」が でてきたら クリック（タップ）して うけとろう",
+    "ドアが 3こ できるけど、今は 1こ あれば だいじょうぶだよ",
+  ],
 };
 
 // ── Step data ────────────────────────────────────────────────────────────────
