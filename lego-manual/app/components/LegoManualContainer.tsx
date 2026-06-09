@@ -33,9 +33,18 @@ export default function LegoManualContainer() {
             </div>
             <span className="font-black text-gray-900 text-lg tracking-[0.2em]">LEGO</span>
           </div>
-          <span className="text-xs font-bold text-gray-800 bg-white/50 px-3 py-1 rounded-full">
-            ひみつきち — vol.1
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-gray-800 bg-white/50 px-3 py-1 rounded-full">
+              ひみつきち — vol.1
+            </span>
+            <button
+              onClick={() => window.print()}
+              className="text-xs font-black text-gray-800 bg-white/70 hover:bg-white px-2 py-1 rounded-full transition-colors"
+              title="PDFとして印刷"
+            >
+              🖨
+            </button>
+          </div>
         </div>
 
         {/* Main content */}

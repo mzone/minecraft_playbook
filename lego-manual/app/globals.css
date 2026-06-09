@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  body { background: white; }
+  /* hide navigation buttons and print button when printing */
+  button { display: none !important; }
+  .border-t-2 { border: none !important; }
+  /* remove outer page padding */
+  .min-h-screen { padding: 0 !important; min-height: unset !important; }
+  .shadow-2xl { box-shadow: none !important; }
+  .rounded-3xl { border-radius: 0 !important; }
+}
