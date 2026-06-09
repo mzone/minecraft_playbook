@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "minecraft-wiki": {
+      "command": "node",
+      "args": [
+        "./data/minecraft-wiki-mcp/dist/server.js",
+        "--api-url",
+        "https://minecraft.wiki/api.php"
+      ]
+    }
+  }
+}
