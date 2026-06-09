@@ -1,0 +1,22 @@
+# Cursor Rules — minecraft_playbook
+
+## Project
+
+LEGO-style Minecraft building manual for Japanese kids. Next.js 16 + React 19 + TypeScript.
+Main data file: `lego-manual/app/data/volumes.ts`
+
+## Rules
+
+- All user-facing strings must be hiragana/katakana (target: elementary school age 1–3)
+- `isNew: true` on a Block triggers yellow highlight arrow — always set it on newly added blocks in a step
+- Block coordinates use isometric space: x (right), y (up in iso), z (depth)
+- Never remove existing `id` fields from blocks — they are used for React keys
+- Accent color `#FFD400` is reserved for LEGO-yellow UI elements
+- Next.js version is 16 — check `node_modules/next/dist/docs/` before using new APIs
+- When adding a volume, update BOTH `volumes.ts` AND `generate-all-pdfs.mjs`
+
+## Do Not
+
+- Do not add English text to `label`, `howTo`, or `gridLabel` fields
+- Do not change the isometric rendering logic in `MainBuildingStage.tsx` without understanding the SVG coordinate math
+- Do not commit files under `lego-manual/output/` (PDFs/PNGs are generated artifacts)
