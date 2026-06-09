@@ -5,6 +5,7 @@ import { steps } from "../data/steps";
 import PartsRequiredBox from "./PartsRequiredBox";
 import MainBuildingStage from "./MainBuildingStage";
 import StepNavigation from "./StepNavigation";
+import CraftingRecipeBox from "./CraftingRecipeBox";
 
 export default function LegoManualContainer() {
   const [stepIndex, setStepIndex] = useState(0);
@@ -63,6 +64,11 @@ export default function LegoManualContainer() {
               </div>
             )}
           </div>
+
+          {/* Crafting recipes (shown when step introduces new crafted items) */}
+          {step.recipes && step.recipes.length > 0 && (
+            <CraftingRecipeBox recipes={step.recipes} />
+          )}
 
           {/* Stage */}
           <div className="flex-1 flex">

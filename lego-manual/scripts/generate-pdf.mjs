@@ -21,7 +21,7 @@ const ROOT = resolve(__dirname, "..");
 
 const BROWSER_PATH = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
 const BASE_URL = "http://localhost:3000";
-const STEPS = 3; // total steps in the mock data
+const STEPS = 5; // total steps in the mock data
 const OUT_DIR = resolve(ROOT, "output");
 const OUT_PDF = process.argv.includes("--out")
   ? process.argv[process.argv.indexOf("--out") + 1]
