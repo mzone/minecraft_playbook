@@ -19,7 +19,9 @@ minecraft_playbook/
 │   │   └── generate-all-pdfs.mjs  # Playwright + reportlab でPDF一括生成
 │   └── output/           # 生成済みPDF・PNG（コミット対象外）
 ├── data/minecraft-wiki-mcp/  # Minecraft Wiki MCPサーバー（TypeScript）
-└── docs/ai/              # AIドキュメント（本ファイルが含まれるディレクトリ）
+└── docs/ai/              # AI向け設計ドキュメント
+    ├── PROJECT.md          # プロジェクト全体設計・全巻ロードマップ
+    └── vol01_himitsukichi.md … vol20_shikakerando.md  # 各巻の詳細設計
 ```
 
 ## よく使うコマンド
