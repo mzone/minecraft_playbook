@@ -1,22 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { steps } from "../data/steps";
+import type { VolumeInfo } from "../data/volumes";
 import PartsRequiredBox from "./PartsRequiredBox";
 import MainBuildingStage from "./MainBuildingStage";
 import StepNavigation from "./StepNavigation";
 import CraftingRecipeBox from "./CraftingRecipeBox";
 
-export default function LegoManualContainer() {
+export default function LegoManualContainer({ volume }: { volume: VolumeInfo }) {
   const [stepIndex, setStepIndex] = useState(0);
   const [visible, setVisible] = useState(true);
-  const step = steps[stepIndex];
+  const step = volume.steps[stepIndex];
   const hasNew = step.blocks.some((b) => b.isNew);
-  const isLast = stepIndex === steps.length - 1;
+  const isLast = stepIndex === volume.steps.length - 1;
 
   const goTo = (next: number) => {
+    const clamped = Math.max(0, Math.min(volume.steps.length - 1, next));
     setVisible(false);
-    setTimeout(() => { setStepIndex(next); setVisible(true); }, 200);
+    setTimeout(() => { setStepIndex(clamped); setVisible(true); }, 200);
   };
 
   return (
@@ -36,7 +37,7 @@ export default function LegoManualContainer() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-gray-800 bg-white/50 px-3 py-1 rounded-full">
-              ひみつきち — vol.1
+              {volume.title} — {volume.id.replace("vol", "vol.")}
             </span>
             <button
               onClick={() => window.print()}
@@ -94,8 +95,8 @@ export default function LegoManualContainer() {
           <StepNavigation
             current={step.stepNumber}
             total={step.totalSteps}
-            onPrev={() => goTo(Math.max(0, stepIndex - 1))}
-            onNext={() => goTo(Math.min(steps.length - 1, stepIndex + 1))}
+            onPrev={() => goTo(stepIndex - 1)}
+            onNext={() => goTo(stepIndex + 1)}
           />
         </div>
       </div>
