@@ -1129,7 +1129,7 @@ export const vol17Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "ガラスと ドアを つくろう（おうちのひとと）",
     recipes: [R_GLASS_PANE, R_TABLE, R_DOOR],
-    parts: [{ color: GLASS, label: "ガラス", count: 16 }, { color: DOOR, label: "ドア", count: 1 }],
+    parts: [{ color: GLASS, label: "ガラス", count: 6 }, { color: DOOR, label: "ドア", count: 1 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER, isNew: true },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER, isNew: true },
