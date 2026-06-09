@@ -38,7 +38,7 @@ const R_PLANK: CraftingRecipe = {
   gridSize: 2,
   grid: [[LOG, null], [null, null]],
   gridLabel: [["まるた", null], [null, null]],
-  output: { color: PLANK, label: "いた", count: 4 },
+  output: { color: PLANK, label: "いた (Oak Planks)", count: 4 },
   tableRequired: false,
   howTo: [
     "「E」ボタンで もちものを ひらこう",
@@ -51,7 +51,7 @@ const R_TABLE: CraftingRecipe = {
   gridSize: 2,
   grid: [[PLANK, PLANK], [PLANK, PLANK]],
   gridLabel: [["いた", "いた"], ["いた", "いた"]],
-  output: { color: TABLE, label: "ものづくりだい", count: 1 },
+  output: { color: TABLE, label: "ものづくりだい (Crafting Table)", count: 1 },
   tableRequired: false,
   howTo: [
     "2×2 の 4マスに「いた」を 1まいずつ いれよう",
@@ -63,7 +63,7 @@ const R_DOOR: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, PLANK, null], [PLANK, PLANK, null], [PLANK, PLANK, null]],
   gridLabel: [["いた", "いた", null], ["いた", "いた", null], ["いた", "いた", null]],
-  output: { color: DOOR, label: "ドア", count: 3 },
+  output: { color: DOOR, label: "ドア (Oak Door)", count: 3 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -76,7 +76,7 @@ const R_STICK: CraftingRecipe = {
   gridSize: 2,
   grid: [[PLANK, null], [PLANK, null]],
   gridLabel: [["いた", null], ["いた", null]],
-  output: { color: STICK, label: "えだ", count: 4 },
+  output: { color: STICK, label: "えだ (Stick)", count: 4 },
   tableRequired: false,
   howTo: [
     "2×2の ひだりれつに「いた」を 2まい たてに いれよう",
@@ -96,7 +96,7 @@ const R_LADDER: CraftingRecipe = {
     ["えだ", "えだ", "えだ"],
     ["えだ", null, "えだ"],
   ],
-  output: { color: STICK, label: "はしご", count: 3 },
+  output: { color: STICK, label: "はしご (Ladder)", count: 3 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -109,7 +109,7 @@ const R_BED: CraftingRecipe = {
   gridSize: 3,
   grid: [[WOOLW, WOOLW, WOOLW], [PLANK, PLANK, PLANK], [null, null, null]],
   gridLabel: [["ウール", "ウール", "ウール"], ["いた", "いた", "いた"], [null, null, null]],
-  output: { color: BED, label: "ベッド", count: 1 },
+  output: { color: BED, label: "ベッド (Bed)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -123,7 +123,7 @@ const R_BOAT: CraftingRecipe = {
   gridSize: 3,
   grid: [[null, null, null], [PLANK, null, PLANK], [PLANK, PLANK, PLANK]],
   gridLabel: [[null, null, null], ["いた", null, "いた"], ["いた", "いた", "いた"]],
-  output: { color: PLANK, label: "ボート", count: 1 },
+  output: { color: PLANK, label: "ボート (Oak Boat)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -137,7 +137,7 @@ const R_FENCE: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, STICK, PLANK], [PLANK, STICK, PLANK], [null, null, null]],
   gridLabel: [["いた", "えだ", "いた"], ["いた", "えだ", "いた"], [null, null, null]],
-  output: { color: FENCE, label: "さく", count: 3 },
+  output: { color: FENCE, label: "さく (Oak Fence)", count: 3 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -151,7 +151,7 @@ const R_FENCE_GATE: CraftingRecipe = {
   gridSize: 3,
   grid: [[STICK, PLANK, STICK], [STICK, PLANK, STICK], [null, null, null]],
   gridLabel: [["えだ", "いた", "えだ"], ["えだ", "いた", "えだ"], [null, null, null]],
-  output: { color: FENCE, label: "さくのとびら", count: 1 },
+  output: { color: FENCE, label: "さくのとびら (Oak Fence Gate)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -165,7 +165,7 @@ const R_BUCKET: CraftingRecipe = {
   gridSize: 3,
   grid: [[null, null, null], [IRON, null, IRON], [null, IRON, null]],
   gridLabel: [[null, null, null], ["てつ", null, "てつ"], [null, "てつ", null]],
-  output: { color: IRON, label: "バケツ", count: 1 },
+  output: { color: IRON, label: "バケツ (Bucket)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -179,7 +179,7 @@ const R_FISHING_ROD: CraftingRecipe = {
   gridSize: 3,
   grid: [[null, null, STICK], [null, STICK, "#E0E0E0"], [STICK, "#E0E0E0", null]],
   gridLabel: [[null, null, "えだ"], [null, "えだ", "いと"], ["えだ", "いと", null]],
-  output: { color: STICK, label: "つりざお", count: 1 },
+  output: { color: STICK, label: "つりざお (Fishing Rod)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -193,7 +193,7 @@ const R_HOE: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, PLANK, null], [null, STICK, null], [null, STICK, null]],
   gridLabel: [["いた", "いた", null], [null, "えだ", null], [null, "えだ", null]],
-  output: { color: PLANK, label: "きのくわ", count: 1 },
+  output: { color: PLANK, label: "きのくわ (Wooden Hoe)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -207,7 +207,7 @@ const R_BREAD: CraftingRecipe = {
   gridSize: 3,
   grid: [[null, null, null], [WHEAT, WHEAT, WHEAT], [null, null, null]],
   gridLabel: [[null, null, null], ["むぎ", "むぎ", "むぎ"], [null, null, null]],
-  output: { color: "#C47B30", label: "パン", count: 1 },
+  output: { color: "#C47B30", label: "パン (Bread)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -220,7 +220,7 @@ const R_SIGN: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, PLANK, PLANK], [PLANK, PLANK, PLANK], [null, STICK, null]],
   gridLabel: [["いた", "いた", "いた"], ["いた", "いた", "いた"], [null, "えだ", null]],
-  output: { color: PLANK, label: "かんばん", count: 3 },
+  output: { color: PLANK, label: "かんばん (Oak Sign)", count: 3 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -234,7 +234,7 @@ const R_PICKAXE_WOOD: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, PLANK, PLANK], [null, STICK, null], [null, STICK, null]],
   gridLabel: [["いた", "いた", "いた"], [null, "えだ", null], [null, "えだ", null]],
-  output: { color: PLANK, label: "きのつるはし", count: 1 },
+  output: { color: PLANK, label: "きのつるはし (Wooden Pickaxe)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -248,7 +248,7 @@ const R_PICKAXE_STONE: CraftingRecipe = {
   gridSize: 3,
   grid: [[COBBLE, COBBLE, COBBLE], [null, STICK, null], [null, STICK, null]],
   gridLabel: [["まるいし", "まるいし", "まるいし"], [null, "えだ", null], [null, "えだ", null]],
-  output: { color: COBBLE, label: "いしのつるはし", count: 1 },
+  output: { color: COBBLE, label: "いしのつるはし (Stone Pickaxe)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -262,7 +262,7 @@ const R_TORCH: CraftingRecipe = {
   gridSize: 2,
   grid: [["#222222", null], [STICK, null]],
   gridLabel: [["せきたん", null], ["えだ", null]],
-  output: { color: TORCH, label: "たいまつ", count: 4 },
+  output: { color: TORCH, label: "たいまつ (Torch)", count: 4 },
   tableRequired: false,
   howTo: [
     "2×2の ひだりうえに「せきたん」を いれよう",
@@ -275,7 +275,7 @@ const R_GLASS_PANE: CraftingRecipe = {
   gridSize: 3,
   grid: [[GLASS, GLASS, GLASS], [GLASS, GLASS, GLASS], [null, null, null]],
   gridLabel: [["ガラス", "ガラス", "ガラス"], ["ガラス", "ガラス", "ガラス"], [null, null, null]],
-  output: { color: GLASS, label: "ガラスパネル", count: 16 },
+  output: { color: GLASS, label: "ガラスパネル (Glass Pane)", count: 16 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -288,7 +288,7 @@ const R_SNOW_BLOCK: CraftingRecipe = {
   gridSize: 2,
   grid: [[SNOW, SNOW], [SNOW, SNOW]],
   gridLabel: [["ゆきだま", "ゆきだま"], ["ゆきだま", "ゆきだま"]],
-  output: { color: SNOW, label: "スノーブロック", count: 1 },
+  output: { color: SNOW, label: "スノーブロック (Snow Block)", count: 1 },
   tableRequired: false,
   howTo: [
     "もちものを ひらこう",
@@ -301,7 +301,7 @@ const R_SHOVEL: CraftingRecipe = {
   gridSize: 3,
   grid: [[null, PLANK, null], [null, STICK, null], [null, STICK, null]],
   gridLabel: [[null, "いた", null], [null, "えだ", null], [null, "えだ", null]],
-  output: { color: PLANK, label: "きのシャベル", count: 1 },
+  output: { color: PLANK, label: "きのシャベル (Wooden Shovel)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -315,7 +315,7 @@ const R_CHEST: CraftingRecipe = {
   gridSize: 3,
   grid: [[PLANK, PLANK, PLANK], [PLANK, null, PLANK], [PLANK, PLANK, PLANK]],
   gridLabel: [["いた", "いた", "いた"], ["いた", null, "いた"], ["いた", "いた", "いた"]],
-  output: { color: CHEST, label: "チェスト", count: 1 },
+  output: { color: CHEST, label: "チェスト (Chest)", count: 1 },
   tableRequired: true,
   howTo: [
     "ものづくりだいを ひらこう",
@@ -331,7 +331,7 @@ export const vol01Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 4, label: "まるたを あつめよう",
     recipes: [R_PLANK],
-    parts: [{ color: PLANK, label: "いた", count: 4 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 4 }],
     blocks: [
       { id: "p0", x: 0, y: 0, z: 0, color: PLANK, isNew: true },
       { id: "p1", x: 1, y: 0, z: 0, color: PLANK, isNew: true },
@@ -342,7 +342,7 @@ export const vol01Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 4, label: "ものづくりだいを つくろう",
     recipes: [R_TABLE],
-    parts: [{ color: TABLE, label: "ものづくりだい", count: 1 }],
+    parts: [{ color: TABLE, label: "ものづくりだい (Crafting Table)", count: 1 }],
     blocks: [
       { id: "p0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "p1", x: 1, y: 0, z: 0, color: PLANK },
@@ -354,7 +354,7 @@ export const vol01Steps: Step[] = [
   {
     stepNumber: 3, totalSteps: 4, label: "ドアを つくろう",
     recipes: [R_DOOR],
-    parts: [{ color: DOOR, label: "ドア", count: 1 }],
+    parts: [{ color: DOOR, label: "ドア (Oak Door)", count: 1 }],
     blocks: [
       { id: "p0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "p1", x: 1, y: 0, z: 0, color: PLANK },
@@ -369,7 +369,7 @@ export const vol01Steps: Step[] = [
   },
   {
     stepNumber: 4, totalSteps: 4, label: "かべと ドアを つけよう",
-    parts: [{ color: DOOR, label: "ドア", count: 1 }],
+    parts: [{ color: DOOR, label: "ドア (Oak Door)", count: 1 }],
     blocks: [
       { id: "p0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "p1", x: 1, y: 0, z: 0, color: PLANK },
@@ -392,7 +392,7 @@ export const vol02Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 4, label: "いたと えだを つくろう",
     recipes: [R_PLANK, R_STICK],
-    parts: [{ color: PLANK, label: "いた", count: 8 }, { color: STICK, label: "えだ", count: 14 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 8 }, { color: STICK, label: "えだ (Stick)", count: 14 }],
     blocks: [
       { id: "b0", x: 0, y: 0, z: 0, color: LOG, isNew: true },
       { id: "b1", x: 1, y: 0, z: 0, color: LOG, isNew: true },
@@ -403,7 +403,7 @@ export const vol02Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 4, label: "ものづくりだいと はしごを つくろう",
     recipes: [R_TABLE, R_LADDER],
-    parts: [{ color: TABLE, label: "ものづくりだい", count: 1 }, { color: STICK, label: "はしご", count: 6 }],
+    parts: [{ color: TABLE, label: "ものづくりだい (Crafting Table)", count: 1 }, { color: STICK, label: "はしご (Ladder)", count: 6 }],
     blocks: [
       { id: "b0", x: 0, y: 0, z: 0, color: LOG },
       { id: "b1", x: 1, y: 0, z: 0, color: LOG },
@@ -414,7 +414,7 @@ export const vol02Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 4, label: "みはりだいの ゆかを おこう",
-    parts: [{ color: LOG, label: "まるた", count: 4 }],
+    parts: [{ color: LOG, label: "まるた (Oak Log)", count: 4 }],
     blocks: [
       { id: "b0", x: 0, y: 0, z: 0, color: LOG },
       { id: "b1", x: 1, y: 0, z: 0, color: LOG },
@@ -428,7 +428,7 @@ export const vol02Steps: Step[] = [
   },
   {
     stepNumber: 4, totalSteps: 4, label: "はしごを のぼってみよう",
-    parts: [{ color: STICK, label: "はしご", count: 3 }],
+    parts: [{ color: STICK, label: "はしご (Ladder)", count: 3 }],
     blocks: [
       { id: "b0", x: 0, y: 0, z: 0, color: LOG },
       { id: "b1", x: 1, y: 0, z: 0, color: LOG },
@@ -450,7 +450,7 @@ export const vol03Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 4, label: "いたを つくろう",
     recipes: [R_PLANK, R_TABLE],
-    parts: [{ color: PLANK, label: "いた", count: 14 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 14 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK, isNew: true },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK, isNew: true },
@@ -462,7 +462,7 @@ export const vol03Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 4, label: "ベッドを つくろう",
     recipes: [R_BED],
-    parts: [{ color: BED, label: "ベッド", count: 1 }],
+    parts: [{ color: BED, label: "ベッド (Bed)", count: 1 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -475,7 +475,7 @@ export const vol03Steps: Step[] = [
   {
     stepNumber: 3, totalSteps: 4, label: "ドアを つくろう",
     recipes: [R_DOOR],
-    parts: [{ color: DOOR, label: "ドア", count: 1 }],
+    parts: [{ color: DOOR, label: "ドア (Oak Door)", count: 1 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -489,7 +489,7 @@ export const vol03Steps: Step[] = [
   },
   {
     stepNumber: 4, totalSteps: 4, label: "おやすみ ハウスかんせい！",
-    parts: [{ color: PLANK, label: "いた（やね）", count: 4 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)（やね）", count: 4 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -512,7 +512,7 @@ export const vol04Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "いたを つくろう",
     recipes: [R_PLANK, R_TABLE],
-    parts: [{ color: PLANK, label: "いた", count: 24 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 24 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT, isNew: true },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT, isNew: true },
@@ -525,7 +525,7 @@ export const vol04Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "ボートを つくろう",
     recipes: [R_BOAT],
-    parts: [{ color: PLANK, label: "ボート", count: 1 }],
+    parts: [{ color: PLANK, label: "ボート (Oak Boat)", count: 1 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT },
@@ -538,7 +538,7 @@ export const vol04Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "ボートに のろう！",
-    parts: [{ color: WATER, label: "みず", count: 4 }],
+    parts: [{ color: WATER, label: "みず (Water)", count: 4 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT },
@@ -559,7 +559,7 @@ export const vol05Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "いたと えだを つくろう",
     recipes: [R_PLANK, R_STICK],
-    parts: [{ color: PLANK, label: "いた", count: 16 }, { color: STICK, label: "えだ", count: 8 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 16 }, { color: STICK, label: "えだ (Stick)", count: 8 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS, isNew: true },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS, isNew: true },
@@ -572,7 +572,7 @@ export const vol05Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "さくを つくろう",
     recipes: [R_TABLE, R_FENCE],
-    parts: [{ color: FENCE, label: "さく", count: 12 }],
+    parts: [{ color: FENCE, label: "さく (Oak Fence)", count: 12 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -590,7 +590,7 @@ export const vol05Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "どうぶつひろばかんせい！",
-    parts: [{ color: FENCE, label: "さく（よこかべ）", count: 4 }],
+    parts: [{ color: FENCE, label: "さく (Oak Fence)（よこかべ）", count: 4 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -614,7 +614,7 @@ export const vol05Steps: Step[] = [
 export const vol06Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "てつのインゴットを つくろう（おうちのひとと）",
-    parts: [{ color: IRON, label: "てつのインゴット", count: 11 }],
+    parts: [{ color: IRON, label: "てつのインゴット (Iron Ingot)", count: 11 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: STONE, isNew: true },
       { id: "s1", x: 1, y: 0, z: 0, color: STONE, isNew: true },
@@ -625,7 +625,7 @@ export const vol06Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "レールと トロッコを つくろう",
-    parts: [{ color: RAIL, label: "レール", count: 6 }, { color: IRON, label: "トロッコ", count: 1 }],
+    parts: [{ color: RAIL, label: "レール (Rail)", count: 6 }, { color: IRON, label: "トロッコ (Minecart)", count: 1 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "g1", x: 1, y: 0, z: 0, color: DIRT },
@@ -639,7 +639,7 @@ export const vol06Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "トロッコライドかんせい！",
-    parts: [{ color: IRON, label: "トロッコ", count: 1 }],
+    parts: [{ color: IRON, label: "トロッコ (Minecart)", count: 1 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "g1", x: 1, y: 0, z: 0, color: DIRT },
@@ -658,7 +658,7 @@ export const vol06Steps: Step[] = [
 export const vol07Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "つちを あつめよう",
-    parts: [{ color: DIRT, label: "つちブロック", count: 30 }],
+    parts: [{ color: DIRT, label: "つちブロック (Dirt)", count: 30 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT, isNew: true },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT, isNew: true },
@@ -671,7 +671,7 @@ export const vol07Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "バケツを つくろう（おうちのひとと）",
     recipes: [R_BUCKET],
-    parts: [{ color: IRON, label: "バケツ", count: 1 }],
+    parts: [{ color: IRON, label: "バケツ (Bucket)", count: 1 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT },
@@ -685,7 +685,7 @@ export const vol07Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "ウォータースライダーかんせい！",
-    parts: [{ color: WATER, label: "みず（バケツ1こ）", count: 1 }],
+    parts: [{ color: WATER, label: "みず (Water)（バケツ1こ）", count: 1 }],
     blocks: [
       { id: "d0", x: 0, y: 0, z: 0, color: DIRT },
       { id: "d1", x: 1, y: 0, z: 0, color: DIRT },
@@ -720,7 +720,7 @@ export const vol08Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "じゃりを あつめよう",
-    parts: [{ color: GRAVEL, label: "じゃり", count: 4 }],
+    parts: [{ color: GRAVEL, label: "じゃり (Gravel)", count: 4 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -735,7 +735,7 @@ export const vol08Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "じゃりを あなに おとそう！",
-    parts: [{ color: GRAVEL, label: "じゃり（おちるよ！）", count: 1 }],
+    parts: [{ color: GRAVEL, label: "じゃり (Gravel)（おちるよ！）", count: 1 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -756,7 +756,7 @@ export const vol09Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "いけを ほろう・みずをいれよう",
     recipes: [R_BUCKET],
-    parts: [{ color: WATER, label: "みず（いけにいれよう）", count: 1 }],
+    parts: [{ color: WATER, label: "みず (Water)（いけにいれよう）", count: 1 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER, isNew: true },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER, isNew: true },
@@ -769,7 +769,7 @@ export const vol09Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "つりざおを つくろう",
     recipes: [R_TABLE, R_STICK, R_FISHING_ROD],
-    parts: [{ color: STICK, label: "つりざお", count: 1 }],
+    parts: [{ color: STICK, label: "つりざお (Fishing Rod)", count: 1 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER },
@@ -807,7 +807,7 @@ export const vol10Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "きのくわを つくろう",
     recipes: [R_TABLE, R_STICK, R_HOE],
-    parts: [{ color: PLANK, label: "きのくわ", count: 1 }],
+    parts: [{ color: PLANK, label: "きのくわ (Wooden Hoe)", count: 1 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: FARMLAND, isNew: true },
       { id: "f1", x: 1, y: 0, z: 0, color: FARMLAND, isNew: true },
@@ -817,7 +817,7 @@ export const vol10Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "みずみちと はたけを つくろう",
-    parts: [{ color: FARMLAND, label: "たがやしたつち", count: 8 }],
+    parts: [{ color: FARMLAND, label: "たがやしたつち (Farmland)", count: 8 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: FARMLAND },
       { id: "f1", x: 1, y: 0, z: 0, color: FARMLAND },
@@ -832,7 +832,7 @@ export const vol10Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "たねを うえよう！",
-    parts: [{ color: WHEAT, label: "たね", count: 8 }],
+    parts: [{ color: WHEAT, label: "たね (Wheat Seeds)", count: 8 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: FARMLAND },
       { id: "f1", x: 1, y: 0, z: 0, color: FARMLAND },
@@ -856,7 +856,7 @@ export const vol11Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "パンを つくろう",
     recipes: [R_TABLE, R_BREAD],
-    parts: [{ color: "#C47B30", label: "パン", count: 3 }],
+    parts: [{ color: "#C47B30", label: "パン (Bread)", count: 3 }],
     blocks: [
       { id: "t0", x: 1, y: 0, z: 0, color: TABLE, isNew: true },
       { id: "b0", x: 0, y: 1, z: 0, color: "#C47B30", isNew: true },
@@ -867,7 +867,7 @@ export const vol11Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "かんばんを つくろう",
     recipes: [R_SIGN],
-    parts: [{ color: PLANK, label: "かんばん", count: 2 }],
+    parts: [{ color: PLANK, label: "かんばん (Oak Sign)", count: 2 }],
     blocks: [
       { id: "t0", x: 1, y: 0, z: 0, color: TABLE },
       { id: "b0", x: 0, y: 1, z: 0, color: "#C47B30" },
@@ -899,7 +899,7 @@ export const vol12Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "さくを つくろう",
     recipes: [R_TABLE, R_PLANK, R_STICK, R_FENCE],
-    parts: [{ color: FENCE, label: "さく", count: 24 }],
+    parts: [{ color: FENCE, label: "さく (Oak Fence)", count: 24 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS, isNew: true },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS, isNew: true },
@@ -911,7 +911,7 @@ export const vol12Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "さくのとびらを つくろう",
     recipes: [R_FENCE_GATE],
-    parts: [{ color: FENCE, label: "さくのとびら", count: 1 }],
+    parts: [{ color: FENCE, label: "さくのとびら (Oak Fence Gate)", count: 1 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -927,7 +927,7 @@ export const vol12Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "うまぼくじょうかんせい！",
-    parts: [{ color: FENCE, label: "さく（のこり）", count: 6 }],
+    parts: [{ color: FENCE, label: "さく (Oak Fence)（のこり）", count: 6 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
@@ -951,7 +951,7 @@ export const vol13Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "いぬごやを つくろう",
     recipes: [R_PLANK, R_TABLE],
-    parts: [{ color: PLANK, label: "いた", count: 16 }],
+    parts: [{ color: PLANK, label: "いた (Oak Planks)", count: 16 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK, isNew: true },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK, isNew: true },
@@ -963,7 +963,7 @@ export const vol13Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "オオカミを さがそう",
-    parts: [{ color: WOLF, label: "ほね（オオカミにあげよう）", count: 5 }],
+    parts: [{ color: WOLF, label: "ほね (Bone)（オオカミにあげよう）", count: 5 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -977,7 +977,7 @@ export const vol13Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "なかまに なれた！",
-    parts: [{ color: WOLF, label: "オオカミ（なかま）", count: 1 }],
+    parts: [{ color: WOLF, label: "オオカミ (Wolf)（なかま）", count: 1 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -997,7 +997,7 @@ export const vol14Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "つるはしを つくろう",
     recipes: [R_TABLE, R_PLANK, R_STICK, R_PICKAXE_WOOD],
-    parts: [{ color: PLANK, label: "きのつるはし", count: 1 }],
+    parts: [{ color: PLANK, label: "きのつるはし (Wooden Pickaxe)", count: 1 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: STONE, isNew: true },
       { id: "s1", x: 1, y: 0, z: 0, color: STONE, isNew: true },
@@ -1007,7 +1007,7 @@ export const vol14Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "たいまつと いしのつるはしを つくろう",
     recipes: [R_TORCH, R_PICKAXE_STONE],
-    parts: [{ color: TORCH, label: "たいまつ", count: 4 }, { color: COBBLE, label: "いしのつるはし", count: 1 }],
+    parts: [{ color: TORCH, label: "たいまつ (Torch)", count: 4 }, { color: COBBLE, label: "いしのつるはし (Stone Pickaxe)", count: 1 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: STONE },
       { id: "s1", x: 1, y: 0, z: 0, color: STONE },
@@ -1018,7 +1018,7 @@ export const vol14Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "トンネルを ほって たからをさがそう！",
-    parts: [{ color: IRON, label: "てっこうせき", count: 1 }],
+    parts: [{ color: IRON, label: "てっこうせき (Iron Ore)", count: 1 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: STONE },
       { id: "s1", x: 1, y: 0, z: 0, color: STONE },
@@ -1037,7 +1037,7 @@ export const vol15Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "ガラスパネルを つくろう（おうちのひとと）",
     recipes: [R_GLASS_PANE],
-    parts: [{ color: GLASS, label: "ガラスパネル", count: 8 }],
+    parts: [{ color: GLASS, label: "ガラスパネル (Glass Pane)", count: 8 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: COBBLE, isNew: true },
       { id: "s1", x: 1, y: 0, z: 0, color: COBBLE, isNew: true },
@@ -1048,7 +1048,7 @@ export const vol15Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "かんさつだいの ゆかと かべを おこう",
-    parts: [{ color: COBBLE, label: "まるいし", count: 8 }],
+    parts: [{ color: COBBLE, label: "まるいし (Cobblestone)", count: 8 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: COBBLE },
       { id: "s1", x: 1, y: 0, z: 0, color: COBBLE },
@@ -1082,7 +1082,7 @@ export const vol16Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "ゆきだまを あつめよう",
     recipes: [R_SNOW_BLOCK],
-    parts: [{ color: SNOW, label: "スノーブロック", count: 8 }],
+    parts: [{ color: SNOW, label: "スノーブロック (Snow Block)", count: 8 }],
     blocks: [
       { id: "s0", x: 0, y: 0, z: 0, color: SNOW, isNew: true },
       { id: "s1", x: 1, y: 0, z: 0, color: SNOW, isNew: true },
@@ -1094,7 +1094,7 @@ export const vol16Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "こおりを あつめよう",
     recipes: [R_SHOVEL],
-    parts: [{ color: ICE, label: "パックドアイス", count: 9 }],
+    parts: [{ color: ICE, label: "パックドアイス (Packed Ice)", count: 9 }],
     blocks: [
       { id: "i0", x: 0, y: 0, z: 0, color: ICE, isNew: true },
       { id: "i1", x: 1, y: 0, z: 0, color: ICE, isNew: true },
@@ -1106,7 +1106,7 @@ export const vol16Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "イグルーかんせい！",
-    parts: [{ color: SNOW, label: "スノーブロック（かべ）", count: 8 }],
+    parts: [{ color: SNOW, label: "スノーブロック (Snow Block)（かべ）", count: 8 }],
     blocks: [
       { id: "i0", x: 0, y: 0, z: 0, color: ICE },
       { id: "i1", x: 1, y: 0, z: 0, color: ICE },
@@ -1129,7 +1129,7 @@ export const vol17Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "ガラスと ドアを つくろう（おうちのひとと）",
     recipes: [R_GLASS_PANE, R_TABLE, R_DOOR],
-    parts: [{ color: GLASS, label: "ガラス", count: 6 }, { color: DOOR, label: "ドア", count: 1 }],
+    parts: [{ color: GLASS, label: "ガラス (Glass)", count: 6 }, { color: DOOR, label: "ドア (Oak Door)", count: 1 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER, isNew: true },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER, isNew: true },
@@ -1141,7 +1141,7 @@ export const vol17Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "かんさつしつの かべを おこう",
-    parts: [{ color: GLASS, label: "ガラスパネル", count: 8 }],
+    parts: [{ color: GLASS, label: "ガラスパネル (Glass Pane)", count: 8 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER },
@@ -1158,7 +1158,7 @@ export const vol17Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "うみのかんさつしつかんせい！",
-    parts: [{ color: GRAVEL, label: "じゃり（ふた）", count: 9 }],
+    parts: [{ color: GRAVEL, label: "じゃり (Gravel)（ふた）", count: 9 }],
     blocks: [
       { id: "w0", x: 0, y: 0, z: 0, color: WATER },
       { id: "w1", x: 1, y: 0, z: 0, color: WATER },
@@ -1184,7 +1184,7 @@ export const vol18Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "かんばんと チェストを つくろう",
     recipes: [R_TABLE, R_PLANK, R_SIGN, R_CHEST],
-    parts: [{ color: PLANK, label: "かんばん", count: 2 }, { color: CHEST, label: "チェスト", count: 1 }],
+    parts: [{ color: PLANK, label: "かんばん (Oak Sign)", count: 2 }, { color: CHEST, label: "チェスト (Chest)", count: 1 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK, isNew: true },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK, isNew: true },
@@ -1194,7 +1194,7 @@ export const vol18Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "いちばの かんばんを たてよう",
-    parts: [{ color: PLANK, label: "かんばん", count: 2 }],
+    parts: [{ color: PLANK, label: "かんばん (Oak Sign)", count: 2 }],
     blocks: [
       { id: "f0", x: 0, y: 0, z: 0, color: PLANK },
       { id: "f1", x: 1, y: 0, z: 0, color: PLANK },
@@ -1226,7 +1226,7 @@ export const vol19Steps: Step[] = [
   {
     stepNumber: 1, totalSteps: 3, label: "チェストを 6こ つくろう",
     recipes: [R_TABLE, R_PLANK, R_CHEST],
-    parts: [{ color: CHEST, label: "チェスト", count: 6 }],
+    parts: [{ color: CHEST, label: "チェスト (Chest)", count: 6 }],
     blocks: [
       { id: "c0", x: 0, y: 0, z: 0, color: CHEST, isNew: true },
       { id: "c1", x: 1, y: 0, z: 0, color: CHEST, isNew: true },
@@ -1236,7 +1236,7 @@ export const vol19Steps: Step[] = [
   {
     stepNumber: 2, totalSteps: 3, label: "かんばんを つくろう",
     recipes: [R_SIGN],
-    parts: [{ color: PLANK, label: "かんばん", count: 6 }],
+    parts: [{ color: PLANK, label: "かんばん (Oak Sign)", count: 6 }],
     blocks: [
       { id: "c0", x: 0, y: 0, z: 0, color: CHEST },
       { id: "c1", x: 1, y: 0, z: 0, color: CHEST },
@@ -1248,7 +1248,7 @@ export const vol19Steps: Step[] = [
   },
   {
     stepNumber: 3, totalSteps: 3, label: "しゅうのうへやかんせい！",
-    parts: [{ color: PLANK, label: "かんばん（チェストの上に）", count: 6 }],
+    parts: [{ color: PLANK, label: "かんばん (Oak Sign)（チェストの上に）", count: 6 }],
     blocks: [
       { id: "c0", x: 0, y: 0, z: 0, color: CHEST },
       { id: "c1", x: 1, y: 0, z: 0, color: CHEST },
@@ -1279,7 +1279,7 @@ export const vol20Steps: Step[] = [
   },
   {
     stepNumber: 2, totalSteps: 3, label: "えりあを くぎって つくろう",
-    parts: [{ color: FENCE, label: "さく（えりあわけ）", count: 40 }],
+    parts: [{ color: FENCE, label: "さく (Oak Fence)（えりあわけ）", count: 40 }],
     blocks: [
       { id: "g0", x: 0, y: 0, z: 0, color: GRASS },
       { id: "g1", x: 1, y: 0, z: 0, color: GRASS },
