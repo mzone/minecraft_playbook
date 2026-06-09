@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# マイクラ はじめてのしかけづくり — レゴ風マニュアル
 
-## Getting Started
+マインクラフトのしかけ作りを子ども向けに解説する、LEGO組み立て説明書スタイルのデジタルマニュアルです。全20巻を収録しています。
 
-First, run the development server:
+## 概要
+
+- **Next.js 16 + React 19** で実装したインタラクティブなWebアプリ
+- アイソメトリックSVGでブロックを3Dっぽく描画
+- 各ステップをクリックで切り替えるスライドショー形式
+- Playwright + reportlab で全20巻のPDFを一括生成
+
+## 収録巻
+
+| ID | タイトル | ステップ数 |
+|----|---------|----------|
+| vol01 | ひみつきち | 4 |
+| vol02 | みはりだい | 4 |
+| vol03 | おやすみハウス | 4 |
+| vol04 | ボートひろば | 3 |
+| vol05 | どうぶつひろば | 3 |
+| vol06 | トロッコライド | 3 |
+| vol07 | ウォータースライダー | 3 |
+| vol08 | おとしあな | 3 |
+| vol09 | つりぼり | 3 |
+| vol10 | はたけ | 3 |
+| vol11 | パンやさん | 3 |
+| vol12 | うまぼくじょう | 3 |
+| vol13 | オオカミとなかよし | 3 |
+| vol14 | たからさがし | 3 |
+| vol15 | マグマかんさつだい | 3 |
+| vol16 | ゆきぐに | 3 |
+| vol17 | うみのたんけん | 3 |
+| vol18 | むらたんけん | 3 |
+| vol19 | たからばこ | 3 |
+| vol20 | しかけランド | 3 |
+
+## セットアップ
+
+```bash
+npm install
+```
+
+## 開発サーバー起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+巻の切り替えは `?vol=vol02` のようにクエリパラメータで指定します。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+http://localhost:3000?vol=vol05
+```
 
-## Learn More
+## PDF生成
 
-To learn more about Next.js, take a look at the following resources:
+### 前提条件
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Chromium: `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+- Python 3 + `reportlab` + `Pillow`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pip install reportlab Pillow
+```
 
-## Deploy on Vercel
+### 全20巻を一括生成
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# 本番ビルドを起動してから実行
+npm run build && npm run start &
+node scripts/generate-all-pdfs.mjs
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+生成されたPDFは `output/` ディレクトリに保存されます。
+
+### 特定の巻だけ生成
+
+```bash
+node scripts/generate-all-pdfs.mjs --vol vol01 --vol vol05
+```
+
+## ディレクトリ構成
+
+```
+lego-manual/
+├── app/
+│   ├── components/
+│   │   ├── LegoManualContainer.tsx   # メインレイアウト
+│   │   ├── MainBuildingStage.tsx     # アイソメトリックSVGステージ
+│   │   ├── PartsRequiredBox.tsx      # 必要ブロック一覧
+│   │   ├── CraftingRecipeBox.tsx     # クラフトレシピ表示
+│   │   └── StepNavigation.tsx        # 前へ/次へボタン
+│   ├── data/
+│   │   ├── volumes.ts                # 全20巻のステップデータ
+│   │   └── steps.ts                  # 型定義
+│   └── page.tsx                      # エントリポイント
+├── scripts/
+│   └── generate-all-pdfs.mjs        # PDF一括生成スクリプト
+└── output/                           # 生成されたPDF・PNG
+```
+
+## データ構造
+
+ステップデータは `app/data/volumes.ts` で定義します。
+
+```typescript
+type Step = {
+  stepNumber: number;
+  totalSteps: number;
+  label: string;
+  parts: Part[];          // 必要ブロック
+  blocks: Block[];        // ステージのブロック配置
+  recipes?: CraftingRecipe[];  // クラフトレシピ（省略可）
+  cameraOffset?: { x: number; y: number };
+};
+```
+
+新しい巻を追加する場合は `volumes.ts` の `VOLUMES` オブジェクトと `ALL_VOLS` 配列（`generate-all-pdfs.mjs`）に追記します。
