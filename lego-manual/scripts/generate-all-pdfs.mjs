@@ -66,7 +66,7 @@ const browser = await chromium.launch({
   args: ["--no-sandbox"],
 });
 const ctx = await browser.newContext({
-  viewport: { width: 700, height: 760 },
+  viewport: { width: 720, height: 1200 },
   deviceScaleFactor: 2,
 });
 const page = await ctx.newPage();
@@ -87,7 +87,9 @@ for (const vol of targets) {
     }
 
     const pngPath = resolve(OUT_DIR, `${vol.id}_step_${String(i + 1).padStart(2, "0")}.png`);
-    await page.screenshot({ path: pngPath, fullPage: false });
+    // カード要素だけをキャプチャすることでヘッダー・フッターの見切れを防ぐ
+    const card = page.locator(".rounded-3xl").first();
+    await card.screenshot({ path: pngPath });
     pngPaths.push(pngPath);
     console.log(`  📷 step ${i + 1}/${vol.steps}`);
 
