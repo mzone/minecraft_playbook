@@ -58,7 +58,9 @@ type Step = {
 
 type Block = {
   id: string;
-  x: number; y: number; z: number;  // アイソメトリック座標
+  x: number; // 東方向（右）
+  y: number; // 南方向（奥行き・手前がy=0）
+  z: number; // 高さ（真上）— z=0が地面、積み重ねるほど増加
   color: string;   // 16進数カラー
   isNew?: boolean; // true → 黄色い矢印でハイライト表示
 };
