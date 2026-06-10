@@ -71,14 +71,25 @@ export default function LegoManualContainer({ volume }: { volume: VolumeInfo }) 
             <CraftingRecipeBox recipes={step.recipes} />
           )}
 
-          {/* Stage */}
-          <div className="flex-1 flex">
-            <MainBuildingStage
-              blocks={step.blocks}
-              label={step.label}
-              cameraOffset={step.cameraOffset}
-            />
-          </div>
+          {/* Text description (for action steps without block visuals) */}
+          {step.description && step.description.length > 0 && (
+            <ol className="bg-[#FFF8DC] border-2 border-[#FFD400] rounded-2xl px-5 py-3 space-y-2 list-decimal list-inside">
+              {step.description.map((line, i) => (
+                <li key={i} className="text-base font-bold text-gray-800 leading-snug">{line}</li>
+              ))}
+            </ol>
+          )}
+
+          {/* Stage (only shown when there are blocks to display) */}
+          {step.blocks.length > 0 && (
+            <div className="flex-1 flex">
+              <MainBuildingStage
+                blocks={step.blocks}
+                label={step.label}
+                cameraOffset={step.cameraOffset}
+              />
+            </div>
+          )}
 
           {/* Completion banner on last step */}
           {isLast && (
