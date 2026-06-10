@@ -32,9 +32,9 @@ export type Step = {
   parts: Part[];
   blocks: Block[];
   cameraOffset?: { x: number; y: number };
-  // If set, show crafting recipe panel before placing blocks.
-  // List all recipes needed to obtain the new parts in this step.
   recipes?: CraftingRecipe[];
+  // ブロック図では表現できない動作をひらがなで説明する（1項目 = 1アクション）
+  description?: string[];
 };
 
 // ── Shared recipe definitions ────────────────────────────────────────────────
@@ -51,11 +51,9 @@ export const RECIPE_PLANK: CraftingRecipe = {
   output: { color: PLANK_COLOR, label: "いた", count: 4 },
   tableRequired: false,
   howTo: [
-    "「E」キー（Switchは「…」ボタン）を おして もちものを ひらこう",
-    "もちものの なかから「まるた」を みつけよう",
-    "「まるた」を 右上の 小さい 2×2の マスに 1こ いれよう",
-    "みぎに「いた ×4」が でてきたら クリック（タップ）して うけとろう",
-    "まるた 1こ → いた 4まい に なるよ！くりかえして 30まい あつめよう",
+    "「E」キーで もちものを ひらこう",
+    "みぎうえの 2×2に まるたを 1こ いれよう",
+    "いた ×4 が でたら うけとろう",
   ],
 };
 
@@ -73,11 +71,9 @@ export const RECIPE_TABLE: CraftingRecipe = {
   output: { color: "#A0522D", label: "ものづくりだい", count: 1 },
   tableRequired: false,
   howTo: [
-    "「E」キー（Switchは「…」ボタン）を おして もちものを ひらこう",
-    "2×2の マス ぜんぶ（4マス）に「いた」を 1まいずつ いれよう",
-    "みぎに「ものづくりだい」が でてきたら クリック（タップ）して うけとろう",
-    "もちものに「ものづくりだい」が はいったら、ちめんを 右クリック（タップ）して おこう",
-    "おいた「ものづくりだい」に ちかづいて 右クリックすると 3×3の おおきい クラフト画面が ひらくよ",
+    "「E」キーで もちものを ひらこう",
+    "2×2の 4マスぜんぶに いた を いれよう",
+    "ものづくりだい が でたら うけとって ちめんに おこう",
   ],
 };
 
@@ -97,11 +93,9 @@ export const RECIPE_DOOR: CraftingRecipe = {
   output: { color: DOOR_TOP, label: "ドア", count: 3 },
   tableRequired: true,
   howTo: [
-    "おいた「ものづくりだい」に ちかづいて 右クリック（タップ）しよう",
-    "3×3の クラフト画面が ひらくよ",
-    "「いた」を ひだりの 2れつ に ぜんぶ（6まい）いれよう — みぎの 1れつは あけておいてね",
-    "みぎに「ドア ×3」が でてきたら クリック（タップ）して うけとろう",
-    "ドアが 3こ できるけど、今は 1こ あれば だいじょうぶだよ",
+    "ものづくりだい に ちかづいて 右クリックしよう",
+    "ひだり 2れつ ぜんぶに いた を いれよう（6まい）",
+    "ドア ×3 が でたら うけとろう",
   ],
 };
 

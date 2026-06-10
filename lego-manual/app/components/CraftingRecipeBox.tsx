@@ -23,72 +23,61 @@ function BlockIcon({ color, size = 36 }: { color: string; size?: number }) {
   );
 }
 
-function CraftSlot({ color, label }: { color?: string | null; label?: string | null }) {
+function CraftSlot({ color }: { color?: string | null }) {
   return (
     <div className={`
-      flex flex-col items-center justify-center rounded-md border-2 w-10 h-10
+      flex items-center justify-center rounded-md border-2 w-11 h-11
       ${color ? "border-gray-400 bg-[#8B8B6B]" : "border-gray-300 bg-gray-100"}
     `}>
-      {color && (
-        <>
-          <BlockIcon color={color} size={26} />
-          {label && (
-            <span className="text-[6px] font-black text-white leading-none drop-shadow">{label}</span>
-          )}
-        </>
-      )}
+      {color && <BlockIcon color={color} size={30} />}
     </div>
   );
 }
 
 function Recipe({ recipe }: { recipe: CraftingRecipe }) {
-  const { grid, gridLabel, gridSize, output, tableRequired, howTo } = recipe;
+  const { grid, gridSize, output, tableRequired, howTo } = recipe;
+  const jpLabel = output.label.replace(/\s*\([^)]*\)/g, "");
 
   return (
-    <div className="flex flex-col gap-2 w-full">
-      {/* ── Recipe grid row ── */}
+    <div className="flex flex-col gap-3 w-full">
+      {/* Recipe grid */}
       <div className="flex items-center gap-3 bg-[#C6C6A6] border-2 border-[#888855] rounded-xl p-2 shadow-inner">
-        {/* ものづくりだい badge */}
         {tableRequired && (
           <div className="flex flex-col items-center gap-0.5">
-            <BlockIcon color="#A0522D" size={26} />
-            <span className="text-[7px] font-black text-gray-700 leading-tight text-center">ものづくりだい<br />ひつよう</span>
+            <BlockIcon color="#A0522D" size={32} />
+            <span className="text-xs font-black text-gray-700 leading-tight text-center">ひつよう</span>
           </div>
         )}
 
-        {/* Grid */}
-        <div className="grid gap-0.5" style={{ gridTemplateColumns: `repeat(${gridSize}, 2.5rem)` }}>
+        <div className="grid gap-0.5" style={{ gridTemplateColumns: `repeat(${gridSize}, 2.75rem)` }}>
           {grid.map((row, r) =>
             row.map((cell, c) => (
-              <CraftSlot key={`${r}-${c}`} color={cell} label={gridLabel[r][c]} />
+              <CraftSlot key={`${r}-${c}`} color={cell} />
             ))
           )}
         </div>
 
-        {/* Arrow */}
         <span className="text-[#FFD400] text-2xl font-black drop-shadow">▶</span>
 
-        {/* Output */}
         <div className="flex flex-col items-center gap-1">
-          <div className="relative flex items-center justify-center rounded-md border-2 border-gray-400 bg-[#8B8B6B] w-12 h-12">
-            <BlockIcon color={output.color} size={36} />
-            <span className="absolute bottom-0.5 right-1 text-[9px] font-black text-white drop-shadow">×{output.count}</span>
+          <div className="relative flex items-center justify-center rounded-md border-2 border-gray-400 bg-[#8B8B6B] w-14 h-14">
+            <BlockIcon color={output.color} size={42} />
+            <span className="absolute bottom-0.5 right-1 text-xs font-black text-white drop-shadow">×{output.count}</span>
           </div>
-          <span className="text-[8px] font-black text-gray-700 text-center leading-tight max-w-[52px]">{output.label}</span>
+          <span className="text-sm font-black text-gray-700 text-center leading-tight max-w-[60px]">{jpLabel}</span>
         </div>
       </div>
 
-      {/* ── How-to steps ── */}
+      {/* How-to steps */}
       {howTo.length > 0 && (
-        <ol className="flex flex-col gap-1.5 pl-1">
+        <ol className="flex flex-col gap-2 pl-1">
           {howTo.map((step, i) => (
             <li key={i} className="flex items-start gap-2">
-              {/* Number bubble */}
-              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#FFD400] text-gray-900
-                font-black text-[10px] flex items-center justify-center shadow-sm mt-0.5">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[#FFD400] text-gray-900
+                font-black text-base flex items-center justify-center shadow-sm mt-0.5">
                 {i + 1}
               </span>
-              <span className="text-[11px] font-bold text-gray-800 leading-snug">{step}</span>
+              <span className="text-base font-bold text-gray-800 leading-snug">{step}</span>
             </li>
           ))}
         </ol>
@@ -100,14 +89,11 @@ function Recipe({ recipe }: { recipe: CraftingRecipe }) {
 export default function CraftingRecipeBox({ recipes }: Props) {
   return (
     <div className="flex flex-col gap-3 bg-white border-2 border-[#FFD400] rounded-2xl p-3 shadow-sm">
-      {/* Header */}
       <div className="flex items-center gap-2">
         <div className="h-0.5 flex-1 bg-[#FFD400]" />
-        <span className="text-[11px] font-black text-gray-500 tracking-widest">つくりかた</span>
+        <span className="text-sm font-black text-gray-500 tracking-widest">つくりかた</span>
         <div className="h-0.5 flex-1 bg-[#FFD400]" />
       </div>
-
-      {/* One recipe per card */}
       {recipes.map((r, i) => <Recipe key={i} recipe={r} />)}
     </div>
   );

@@ -58,8 +58,8 @@ export default function LegoManualContainer({ volume }: { volume: VolumeInfo }) 
             <PartsRequiredBox parts={step.parts} />
             {hasNew && (
               <div className="ml-auto flex flex-col items-center gap-1 bg-[#FFF8DC] border-2 border-[#FFD400] rounded-2xl px-4 py-3 shadow-sm">
-                <span className="text-2xl leading-none">⬇</span>
-                <span className="text-[11px] font-black text-gray-700 leading-tight text-center">
+                <span className="text-3xl leading-none">⬇</span>
+                <span className="text-sm font-black text-gray-700 leading-tight text-center">
                   あたらしい<br />ブロック
                 </span>
               </div>
@@ -71,20 +71,31 @@ export default function LegoManualContainer({ volume }: { volume: VolumeInfo }) 
             <CraftingRecipeBox recipes={step.recipes} />
           )}
 
-          {/* Stage */}
-          <div className="flex-1 flex">
-            <MainBuildingStage
-              blocks={step.blocks}
-              label={step.label}
-              cameraOffset={step.cameraOffset}
-            />
-          </div>
+          {/* Text description (for action steps without block visuals) */}
+          {step.description && step.description.length > 0 && (
+            <ol className="bg-[#FFF8DC] border-2 border-[#FFD400] rounded-2xl px-5 py-4 space-y-3 list-decimal list-inside">
+              {step.description.map((line, i) => (
+                <li key={i} className="text-xl font-black text-gray-800 leading-snug">{line}</li>
+              ))}
+            </ol>
+          )}
+
+          {/* Stage (only shown when there are blocks to display) */}
+          {step.blocks.length > 0 && (
+            <div className="flex-1 flex">
+              <MainBuildingStage
+                blocks={step.blocks}
+                label={step.label}
+                cameraOffset={step.cameraOffset}
+              />
+            </div>
+          )}
 
           {/* Completion banner on last step */}
           {isLast && (
             <div className="bg-[#FFD400] rounded-2xl py-3 flex items-center justify-center gap-3 shadow">
               <span className="text-2xl">🎉</span>
-              <span className="text-xl font-black text-gray-900">やった！かんせい！</span>
+              <span className="text-2xl font-black text-gray-900">やった！かんせい！</span>
               <span className="text-2xl">🎉</span>
             </div>
           )}
