@@ -75,7 +75,7 @@ export default function MainBuildingStage({ blocks, label, cameraOffset }: Props
     <div className="flex-1 flex flex-col bg-[#F0F7E6] rounded-2xl border-2 border-[#dde8cc] mx-2 min-h-[360px] overflow-hidden">
       {/* Step label bar */}
       <div className="bg-white/70 backdrop-blur-sm border-b border-[#dde8cc] px-4 py-2 flex items-center gap-2">
-        <span className="text-lg font-black text-gray-800">{label}</span>
+        <span className="text-xl font-black text-gray-800">{label}</span>
       </div>
 
       <div className="flex-1 flex items-center justify-center">
