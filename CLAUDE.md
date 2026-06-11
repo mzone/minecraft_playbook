@@ -33,9 +33,14 @@ npm run dev          # 開発サーバー起動 → http://localhost:3000
 npm run build        # 本番ビルド
 npm run start        # 本番サーバー起動（PDF生成前に必要）
 
-# PDF一括生成（本番サーバー起動後）
+# 子ども向けビジュアルマニュアルPDF一括生成（本番サーバー起動後）
 node scripts/generate-all-pdfs.mjs
 node scripts/generate-all-pdfs.mjs --vol vol01 --vol vol05  # 特定巻のみ
+
+# 大人（保護者）向け解説ガイドPDF生成（設計書 docs/ai/vol*.md から生成）
+pip install reportlab          # 初回のみ
+python3 scripts/generate-parent-guide.py
+# → output/おうちのひとガイド.pdf（全20巻の親向けページをまとめた1冊）
 ```
 
 ## 巻の追加方法
