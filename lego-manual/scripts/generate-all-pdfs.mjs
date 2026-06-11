@@ -26,7 +26,7 @@ mkdirSync(OUT_DIR, { recursive: true });
 
 // 生成対象の巻を決定
 const ALL_VOLS = [
-  { id: "vol01", title: "ひみつきち",         steps: 4 },
+  { id: "vol01", title: "きのいえ",           steps: 12 },
   { id: "vol02", title: "みはりだい",         steps: 4 },
   { id: "vol03", title: "おやすみハウス",     steps: 4 },
   { id: "vol04", title: "ボートひろば",       steps: 3 },
@@ -79,8 +79,8 @@ for (const vol of targets) {
 
     if (i === 0) {
       await page.goto(url, { waitUntil: "networkidle" });
-      await page.waitForSelector("svg");
-      // 最初のステップが表示されるまで少し待つ
+      // wait for either SVG (block steps) or the step counter (text-only steps)
+      await page.waitForSelector(".rounded-3xl", { timeout: 10000 });
       await page.waitForTimeout(400);
     }
 
