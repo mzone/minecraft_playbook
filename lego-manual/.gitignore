@@ -21,8 +21,9 @@
 # production
 /build
 
-# generated PDFs / PNGs
-/output
+# 生成物: PDFはGit管理する。中間ファイル（PNG・一時pyなど）は除外
+/output/*
+!/output/*.pdf
 
 # misc
 .DS_Store
