@@ -17,7 +17,7 @@ minecraft_playbook/
 │   │   └── page.tsx
 │   ├── scripts/
 │   │   └── generate-all-pdfs.mjs  # Playwright + reportlab でPDF一括生成
-│   └── output/           # 生成済みPDF・PNG（コミット対象外）
+│   └── output/           # 生成物。PDFはGit管理、PNG等の中間ファイルは除外
 ├── data/minecraft-wiki-mcp/  # Minecraft Wiki MCPサーバー（TypeScript）
 └── docs/ai/              # AI向け設計ドキュメント
     ├── PROJECT.md          # プロジェクト全体設計・全巻ロードマップ
