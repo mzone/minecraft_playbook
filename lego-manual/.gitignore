@@ -20,6 +20,9 @@
 # production
 /build
 
+# generated PDFs / PNGs
+/output
+
 # misc
 .DS_Store
 *.pem
